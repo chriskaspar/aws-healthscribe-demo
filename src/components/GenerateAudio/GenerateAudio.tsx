@@ -244,7 +244,11 @@ function loadTemplate(templateId: string) {
                                 items={[
                                     { text: 'Knee Mock Visit', id: 'kneeProblem' },
                                     { text: 'Sleep Mock Visit', id: 'sleepApnea' },
+                                    { text: 'AbbVie Humira Mock Visit', id: 'abbvieHumira' },
+                                    { text: 'Novartis Entresto Mock Visit', id: 'novartisEntresto' },
+                                    { text: 'Pfizer Ibrance Mock Visit', id: 'pfizerIbrance' },
                                 ]}
+
                                 disabled={isDownloading}
                             >
                                 Load Template
