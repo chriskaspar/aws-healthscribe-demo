@@ -20,6 +20,9 @@ import AudioLineBox from './AudioLineBox';
 import styles from './GenerateAudio.module.css';
 import { KNEE_PROBLEM } from './templates/knee';
 import { SLEEP_APNEA } from './templates/sleep';
+import { ABBVIE_CONVERSATION } from './templates/abbvie';
+import { NOVARTIS_CONVERSATION } from './templates/novartis';
+import { PFIZER_CONVERSATION } from './templates/pfizer';
 
 const crunker = new Crunker();
 
@@ -124,22 +127,31 @@ export default function GenerateAudio() {
         setAudioLines([...audioLines, { id: newId, speaker: null, text: '' }]);
     }
 
-    /**
-     * @description Load audioLines from a template
-     * @param {string} templateId template ID
-     */
-    function loadTemplate(templateId: string) {
-        switch (templateId) {
-            case 'kneeProblem':
-                setAudioLines(KNEE_PROBLEM);
-                break;
-            case 'sleepApnea':
-                setAudioLines(SLEEP_APNEA);
-                break;
-            default:
-                break;
-        }
+/**
+ * @description Load audioLines from a template
+ * @param {string} templateId template ID
+ */
+function loadTemplate(templateId: string) {
+    switch (templateId) {
+        case 'kneeProblem':
+            setAudioLines(KNEE_PROBLEM);
+            break;
+        case 'sleepApnea':
+            setAudioLines(SLEEP_APNEA);
+            break;
+        case 'abbvieHumira':
+            setAudioLines(ABBVIE_CONVERSATION);
+            break;
+        case 'novartisEntresto':
+            setAudioLines(NOVARTIS_CONVERSATION);
+            break;
+        case 'pfizerIbrance':
+            setAudioLines(PFIZER_CONVERSATION);
+            break;
+        default:
+            break;
     }
+}
 
     /**
      * @description Generate audio from audioLines
