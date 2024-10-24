@@ -17,12 +17,13 @@ export function Overview() {
                 <SpaceBetween size={'s'}>
                     <TextContent>
                         <Box variant="p">
-                            This sample ReactJS-based web app shows the art of the possible in using AWS HealthScribe.
+                            Welcome to the platform designed to streamline your interactions, whether you're a healthcare professional or a pharmaceutical sales representative. Our app allows you to easily record, manage, and generate detailed transcripts of your conversations with patients and colleagues.
                         </Box>
                         <Box variant="p">
-                            AWS HealthScribe is a HIPAA-eligible service empowering healthcare software vendors to build
-                            clinical applications that automatically generate clinical notes by analyzing
-                            patient-clinician conversations.
+                            The app captures both patient discussions with clinicians as well as interactions between healthcare professionals (HCPs) and pharmaceutical sales representatives. It automatically generates structured transcripts and post-meeting summaries to help you maintain comprehensive and organized records.
+                        </Box>
+                        <Box variant="p">
+                            With features such as automatic transcription, note generation, and structured medical term extraction, this tool helps save time and improve the quality of documentation, ensuring you can focus on what matters most—providing quality care and meaningful conversations.
                         </Box>
                     </TextContent>
                 </SpaceBetween>
@@ -37,10 +38,11 @@ export function Highlights() {
             <Header variant="h2">Highlights</Header>
             <Container>
                 <ul>
-                    <li>Submit an audio file for AWS HealthScribe.</li>
-                    <li>View AWS HealthScribe results.</li>
-                    <li>Record or generate audio.</li>
-                    <li>Integration with Amazon Comprehend Medical.</li>
+                    <li>Record conversations between healthcare professionals and patients or sales representatives.</li>
+                    <li>Automatically generate structured transcripts and summaries after each meeting.</li>
+                    <li>View comprehensive transcripts with segmented speaker identification.</li>
+                    <li>Receive rich insights and medical terminology extraction for enhanced documentation.</li>
+                    <li>Integrate with additional tools for medical data analysis and patient insights.</li>
                 </ul>
             </Container>
         </SpaceBetween>
@@ -56,32 +58,26 @@ export function Details() {
             <Container>
                 <SpaceBetween size={'s'}>
                     <Box>
-                        <b>View HealthScribe results</b>, including:
+                        <b>Key features include:</b>
                         <ul>
-                            <li>Summarized clinical notes</li>
-                            <li>Rich consultation transcripts</li>
-                            <li>Transcript segmentation</li>
-                            <li>Evidence mapping</li>
-                            <li>Structured medical terms</li>
+                            <li>Automatic generation of clinical notes or meeting summaries based on recorded conversations.</li>
+                            <li>Detailed and structured transcripts, organized by speaker (doctor, patient, HCP, sales rep).</li>
+                            <li>Segmentation of transcripts into meaningful sections for easy review and action.</li>
+                            <li>Evidence mapping and extraction of key medical insights and terminologies from conversations.</li>
+                            <li>Support for medical ontologies such as RxNorm, ICD-10-CM, and SNOMED CT.</li>
                         </ul>
                     </Box>
                     <Box>
                         <b>
-                            Integrate AWS HealthScribe with{' '}
+                            Integrate with{' '}
                             <Link external href="https://aws.amazon.com/comprehend/medical/">
                                 Amazon Comprehend Medical
                             </Link>
                         </b>
-                        , allowing you to:
+                        to enhance your transcripts with additional insights:
                         <ul>
-                            <li>
-                                Infer medical ontologies (RxNorm, ICD-10-CM, and SNOMED CT) from the HealthScribe
-                                trancript
-                            </li>
-                            <li>
-                                Detect medical terminologies and infer medical ontologies from the HealthScribe insights
-                                output
-                            </li>
+                            <li>Detect medical terms and concepts directly from conversations.</li>
+                            <li>Link extracted terms to standard medical ontologies, enhancing the accuracy of your documentation.</li>
                         </ul>
                     </Box>
                 </SpaceBetween>
