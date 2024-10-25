@@ -103,8 +103,8 @@ export default function Conversation() {
             <Grid
                 gridDefinition={[
                     { colspan: { default: 12 } },
-                    { colspan: { default: 6 } },
-                    { colspan: { default: 6 } },
+                    { colspan: { default: 12 } },
+                    { colspan: { default: 12 } },
                 ]}
             >
                 <TopPanel
