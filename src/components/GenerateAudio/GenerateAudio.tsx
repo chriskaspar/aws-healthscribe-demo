@@ -44,6 +44,10 @@ export default function GenerateAudio() {
     const [audioLines, setAudioLines] = useState<AudioLines>(DEFAULT_AUDIOLINES);
     const [isDownloading, setIsDownloading] = useState<boolean>(false);
 
+    /**
+     * @description Validate audioLine. If speaker or text is missing, add a flash message.
+     * @param {AudioLine} audioLine audioLine to validate
+     */
     function validateAudioLine(audioLine: AudioLine) {
         if (!audioLine.speaker?.value) {
             addFlashMessage({
@@ -68,6 +72,11 @@ export default function GenerateAudio() {
         }
     }
 
+    /**
+     * @description Update audioLines with a new speaker for a given id
+     * @param {number} id audioLine ID
+     * @param {SelectProps.Option} selectedOption option from <Select />
+     */
     function updateAudioLineSpeaker(id: number, selectedOption: SelectProps.Option) {
         const newAudioLines = audioLines.map((audioLine) => {
             if (audioLine.id === id) {
@@ -78,6 +87,11 @@ export default function GenerateAudio() {
         setAudioLines(newAudioLines);
     }
 
+    /**
+     * @description Update audioLines with a new text for a given id
+     * @param {string} id audioLine ID
+     * @param {string} value option from <Textarea />
+     */
     function updateAudioLineText(id: number, value: string) {
         const newAudioLines = audioLines.map((audioLine) => {
             if (audioLine.id === id) {
@@ -88,6 +102,10 @@ export default function GenerateAudio() {
         setAudioLines(newAudioLines);
     }
 
+    /**
+     * @description Remove audioLine with a given id
+     * @param {string} id audioLine ID
+     */
     function removeAudioLine(id: number) {
         if (audioLines.length === 1) {
             addFlashMessage({
@@ -103,11 +121,18 @@ export default function GenerateAudio() {
         }
     }
 
+    /**
+     * @description Add a new audioLine
+     */
     function addNewAudioLine() {
         const newId = Math.max(...audioLines.map((a) => a.id)) + 1;
         setAudioLines([...audioLines, { id: newId, speaker: null, text: '' }]);
     }
 
+    /**
+     * @description Load audioLines from a template
+     * @param {string} templateId template ID
+     */
     function loadTemplate(templateId: string) {
         switch (templateId) {
             case 'kneeProblem':
@@ -136,6 +161,9 @@ export default function GenerateAudio() {
         }
     }
 
+    /**
+     * @description Generate audio from audioLines
+     */
     async function generateAudio() {
         if (audioLines.length === 0) {
             addFlashMessage({
