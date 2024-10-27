@@ -1,4 +1,4 @@
-export const LIFETOUCH_CONVERSATION = [
+export const LIFETOUCH_INITIAL_CONVERSATION = [
     {
         id: 1,
         speaker: {
